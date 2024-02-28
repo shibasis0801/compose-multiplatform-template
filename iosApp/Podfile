@@ -1,0 +1,4 @@
+platform :ios, "12"
+target 'iosApp' do
+  pod "PodCompose", :path => "../PodCompose"
+end

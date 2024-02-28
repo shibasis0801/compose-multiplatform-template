@@ -1,8 +1,10 @@
 rootProject.name = "MyApplication"
 
 include(":androidApp")
-include(":shared")
+include(":PodCompose")
+include(":PodNetwork")
 include(":desktopApp")
+include(":vertxServer")
 
 pluginManagement {
     repositories {
