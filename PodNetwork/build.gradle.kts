@@ -61,8 +61,8 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
             }
         }
-        val iosX64Main by getting
-        val iosArm64Main by getting
+//        val iosX64Main by getting
+//        val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
         val iosMain by creating {
             dependsOn(commonMain)
