@@ -3,7 +3,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.compose")
     kotlin("native.cocoapods")
-
+    kotlin("plugin.serialization")
 }
 
 kotlin {
