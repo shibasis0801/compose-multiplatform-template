@@ -12,8 +12,8 @@ kotlin {
     jvm("desktop")
 
     listOf(
-        iosX64(),
-        iosArm64(),
+//        iosX64(),
+//        iosArm64(),
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
@@ -59,8 +59,8 @@ kotlin {
         val iosSimulatorArm64Main by getting
         val iosMain by creating {
             dependsOn(commonMain)
-            iosX64Main.dependsOn(this)
-            iosArm64Main.dependsOn(this)
+//            iosX64Main.dependsOn(this)
+//            iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
         }
         val desktopMain by getting {

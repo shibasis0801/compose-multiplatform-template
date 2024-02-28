@@ -15,8 +15,6 @@ repositories {
   mavenCentral()
 }
 
-val vertxVersion = "4.5.4"
-val junitJupiterVersion = "5.9.1"
 
 val mainVerticleName = "com.example.starter.MainVerticle"
 val launcherClassName = "io.vertx.core.Launcher"
@@ -29,15 +27,7 @@ application {
 }
 
 dependencies {
-  implementation(platform("io.vertx:vertx-stack-depchain:$vertxVersion"))
-  implementation(project(":PodNetwork"))
-  implementation("io.vertx:vertx-web-client")
-  implementation("io.vertx:vertx-web")
-  implementation("io.vertx:vertx-lang-kotlin-coroutines")
-  implementation("io.vertx:vertx-lang-kotlin")
-  implementation(kotlin("stdlib-jdk8"))
-  testImplementation("io.vertx:vertx-junit5")
-  testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
+  api(project(":PodNetwork"))
 }
 
 val compileKotlin: KotlinCompile by tasks

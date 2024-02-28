@@ -1,25 +1,34 @@
 package com.example.starter
 
-import io.vertx.core.AbstractVerticle
-import io.vertx.core.Promise
+import com.stark.network.BaseVerticle
+import com.stark.network.JsonResponse
+import com.stark.network.port
+import io.vertx.core.http.HttpServerRequest
+import io.vertx.ext.web.Router
+import io.vertx.ext.web.handler.BodyHandler
 
-class MainVerticle : AbstractVerticle() {
+class MainVerticle : BaseVerticle() {
+  override suspend fun start() {
+    val server = vertx.createHttpServer()
+    val router = Router.router(vertx)
+    router.apply {
+      route().handler {
+        val request: HttpServerRequest = it.request()
+        val requestPath = request.path()
+        val requestMethod = request.method().name()
 
-  override fun start(startPromise: Promise<Void>) {
-    vertx
-      .createHttpServer()
-      .requestHandler { req ->
-        req.response()
-          .putHeader("content-type", "text/plain")
-          .end("Hello from Vert.x!")
+        logger.info("Received request: $requestMethod $requestPath")
+        it.next()
       }
-      .listen(8888) { http ->
-        if (http.succeeded()) {
-          startPromise.complete()
-          println("HTTP server started on port 8888")
-        } else {
-          startPromise.fail(http.cause());
+      route().handler(BodyHandler.create())
+
+      get("/")
+        .handle { ctx, _ ->
+          JsonResponse(mapOf("status" to "UP"))
         }
-      }
+    }
+
+    server.requestHandler(router).listen(port)
+    logger.info("Listening to requests at $port")
   }
 }
