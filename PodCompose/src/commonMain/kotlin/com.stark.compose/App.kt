@@ -18,6 +18,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.stark.network.baseUrl
 import com.stark.network.httpClient
+//import com.stark.network.httpClient
+import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 
@@ -33,7 +35,8 @@ fun App() {
 
 
         LaunchedEffect(Unit) {
-            httpClient.get<JsonResponse>("${baseUrl}/get")
+            httpClient
+//            httpClient.get<JsonResponse>("${baseUrl}/get")
         }
 
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {

@@ -1,3 +1,5 @@
+import com.android.build.api.dsl.Packaging
+
 plugins {
     kotlin("multiplatform")
     id("com.android.application")
@@ -9,7 +11,7 @@ kotlin {
     sourceSets {
         val androidMain by getting {
             dependencies {
-                implementation(project(":PodCompose"))
+                api(project(":PodCompose"))
             }
         }
     }
@@ -34,5 +36,8 @@ android {
     }
     kotlin {
         jvmToolchain(17)
+    }
+    packaging {
+        resources.pickFirsts.add("compose-multiplatform.xml")
     }
 }
