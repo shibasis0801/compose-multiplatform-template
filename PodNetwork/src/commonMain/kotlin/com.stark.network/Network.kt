@@ -26,14 +26,19 @@ enum class StatusCode(val code: Int) {
 }
 
 data class Response(
-    val jsonData: String,
+    val body: String,
     val statusCode: StatusCode = StatusCode.SUCCESS
 ) {
     companion object {
-        inline fun<reified T> fromData(
+        inline fun<reified T> success(
             data: T,
             statusCode: StatusCode = StatusCode.SUCCESS,
         ) = Response(Json.encodeToString<T>(data), statusCode)
+
+        inline fun<reified T> error(
+            error: T,
+            statusCode: StatusCode = StatusCode.ERROR_SERVER,
+        ) = Response(Json.encodeToString<T>(error), statusCode)
     }
 }
 

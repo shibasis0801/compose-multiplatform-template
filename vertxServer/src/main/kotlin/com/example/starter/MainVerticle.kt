@@ -24,8 +24,18 @@ class MainVerticle : BaseVerticle() {
       route().handler(BodyHandler.create())
 
       get("/")
-        .handle { ctx, _ ->
-          Response.fromData(SampleData("Hello", "Server"))
+        .json { routingContext ->
+          Response.success(SampleData("Hello", "Server"))
+        }
+
+      get("/fail")
+        .json {
+          Response.error(mapOf("error" to "Failed to fetch data"))
+        }
+
+      get("/live-reload")
+        .json {
+          Response.success(mapOf("status" to "Live reload does not work. Need to write a small plugin around vertx quirks"))
         }
     }
 
