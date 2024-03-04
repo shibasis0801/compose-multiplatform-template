@@ -5,10 +5,8 @@ import io.ktor.client.HttpClientConfig
 import io.ktor.client.engine.HttpClientEngineConfig
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.serialization.kotlinx.json.json
-import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-
 
 expect val httpClient: HttpClient
 expect val baseUrl: String
@@ -27,13 +25,15 @@ enum class StatusCode(val code: Int) {
     ERROR_SERVER(500)
 }
 
-@Serializable
 data class Response(
     val jsonData: String,
     val statusCode: StatusCode = StatusCode.SUCCESS
-)
+) {
+    companion object {
+        inline fun<reified T> fromData(
+            data: T,
+            statusCode: StatusCode = StatusCode.SUCCESS,
+        ) = Response(Json.encodeToString<T>(data), statusCode)
+    }
+}
 
-inline fun<reified T> JsonResponse(
-    data: T,
-    statusCode: StatusCode = StatusCode.SUCCESS,
-) = Response(Json.encodeToString<T>(data), statusCode)

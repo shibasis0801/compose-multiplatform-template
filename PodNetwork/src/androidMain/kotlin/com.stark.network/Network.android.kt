@@ -6,4 +6,4 @@ import io.ktor.client.engine.okhttp.OkHttp
 actual val httpClient = HttpClient(OkHttp) {
     BodyParser()
 }
-actual val baseUrl = "http://10.0.2.2:${port}"
+actual val baseUrl = "http://localhost:${port}"

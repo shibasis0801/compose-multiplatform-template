@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		71F18C871788501FBBBE8F05 /* libPods-iosApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C256C2588E8E874231B616A1 /* libPods-iosApp.a */; };
-		A03D665D2B8F303F003D4665 /* iosAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D665C2B8F303F003D4665 /* iosAppApp.swift */; };
-		A03D665F2B8F303F003D4665 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D665E2B8F303F003D4665 /* ContentView.swift */; };
+		A03D665D2B8F303F003D4665 /* iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D665C2B8F303F003D4665 /* iosApp.swift */; };
 		A03D66612B8F3040003D4665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A03D66602B8F3040003D4665 /* Assets.xcassets */; };
 		A03D66652B8F3040003D4665 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A03D66642B8F3040003D4665 /* Preview Assets.xcassets */; };
+		A04775B42B94EA37003F18E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04775B32B94EA37003F18E1 /* UIKit.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		698866EB2903C2F760073B97 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A03D66592B8F303F003D4665 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A03D665C2B8F303F003D4665 /* iosAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosAppApp.swift; sourceTree = "<group>"; };
-		A03D665E2B8F303F003D4665 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A03D665C2B8F303F003D4665 /* iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosApp.swift; sourceTree = "<group>"; };
 		A03D66602B8F3040003D4665 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A03D66622B8F3040003D4665 /* iosApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iosApp.entitlements; sourceTree = "<group>"; };
 		A03D66642B8F3040003D4665 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A04775B32B94EA37003F18E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C21BFAA3AD626F3B61849DFC /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 		C256C2588E8E874231B616A1 /* libPods-iosApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iosApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -32,6 +32,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71F18C871788501FBBBE8F05 /* libPods-iosApp.a in Frameworks */,
+				A04775B42B94EA37003F18E1 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,8 +60,7 @@
 		A03D665B2B8F303F003D4665 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
-				A03D665C2B8F303F003D4665 /* iosAppApp.swift */,
-				A03D665E2B8F303F003D4665 /* ContentView.swift */,
+				A03D665C2B8F303F003D4665 /* iosApp.swift */,
 				A03D66602B8F3040003D4665 /* Assets.xcassets */,
 				A03D66622B8F3040003D4665 /* iosApp.entitlements */,
 				A03D66632B8F3040003D4665 /* Preview Content */,
@@ -79,6 +79,7 @@
 		B1CCBA63C269E246460C3755 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A04775B32B94EA37003F18E1 /* UIKit.framework */,
 				C256C2588E8E874231B616A1 /* libPods-iosApp.a */,
 			);
 			name = Frameworks;
@@ -104,7 +105,7 @@
 				A03D66552B8F303F003D4665 /* Sources */,
 				A03D66562B8F303F003D4665 /* Frameworks */,
 				A03D66572B8F303F003D4665 /* Resources */,
-				8326237B783C39D69F5E36DF /* [CP] Copy Pods Resources */,
+				668A7A356D16959128363610 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,7 +162,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8326237B783C39D69F5E36DF /* [CP] Copy Pods Resources */ = {
+		668A7A356D16959128363610 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -207,8 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A03D665F2B8F303F003D4665 /* ContentView.swift in Sources */,
-				A03D665D2B8F303F003D4665 /* iosAppApp.swift in Sources */,
+				A03D665D2B8F303F003D4665 /* iosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +267,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -322,6 +323,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -354,15 +356,16 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stark.iosApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -394,15 +397,16 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stark.iosApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -1,7 +1,8 @@
 package com.example.starter
 
 import com.stark.network.BaseVerticle
-import com.stark.network.JsonResponse
+import com.stark.network.Response
+import com.stark.network.SampleData
 import com.stark.network.port
 import io.vertx.core.http.HttpServerRequest
 import io.vertx.ext.web.Router
@@ -24,7 +25,7 @@ class MainVerticle : BaseVerticle() {
 
       get("/")
         .handle { ctx, _ ->
-          JsonResponse(mapOf("status" to "UP"))
+          Response.fromData(SampleData("Hello", "Server"))
         }
     }
 
