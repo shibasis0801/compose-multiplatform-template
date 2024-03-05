@@ -15,15 +15,8 @@ repositories {
   mavenCentral()
 }
 
-
-val mainVerticleName = "com.example.starter.MainVerticle"
-val launcherClassName = "io.vertx.core.Launcher"
-
-val watchForChange = "src/**/*"
-val doOnChange = "${projectDir}/gradlew classes"
-
 application {
-  mainClass.set(launcherClassName)
+  mainClass.set("com.example.starter.MainKt")
 }
 
 dependencies {
@@ -36,18 +29,18 @@ compileKotlin.kotlinOptions.jvmTarget = "17"
 tasks.withType<ShadowJar> {
   archiveClassifier.set("fat")
   manifest {
-    attributes(mapOf("Main-Verticle" to mainVerticleName))
+    attributes(mapOf("Main-Verticle" to "com.example.starter.MainVerticle"))
   }
   mergeServiceFiles()
 }
 
-tasks.withType<Test> {
-  useJUnitPlatform()
-  testLogging {
-    events = setOf(PASSED, SKIPPED, FAILED)
+tasks.register("serve") {
+  dependsOn("shadowJar")
+  doLast {
+    val fatJar = tasks.shadowJar.get().archiveFile.get().asFile
+    exec {
+      commandLine("java", "-jar", fatJar.absolutePath)
+    }
   }
 }
 
-tasks.withType<JavaExec> {
-  args = listOf("run", mainVerticleName, "--redeploy=$watchForChange", "--launcher-class=$launcherClassName", "--on-redeploy=$doOnChange")
-}

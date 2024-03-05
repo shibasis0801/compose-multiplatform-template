@@ -35,7 +35,7 @@ class MainVerticle : BaseVerticle() {
 
       get("/live-reload")
         .json {
-          Response.success(mapOf("status" to "Live reload does not work. Need to write a small plugin around vertx quirks"))
+          Response.success(mapOf("status" to "Live reload does not work. So, just hit run in Main.kt"))
         }
     }
 

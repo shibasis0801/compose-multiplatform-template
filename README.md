@@ -12,10 +12,10 @@ This project is forked from the official template with a few changes:
 
 ## Running the Server
 
-To run the server, execute the following command:
+Run the server using Android Studio's run configuration for Main.kt, or using the following command
 
 ```bash
-./gradlew :vertxServer:runShadow
+./gradlew :vertxServer:serve
 ```
 
 ```bash
