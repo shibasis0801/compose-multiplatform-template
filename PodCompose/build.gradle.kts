@@ -44,6 +44,8 @@ kotlin {
                 implementation(compose.material)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
+                implementation("androidx.datastore:datastore-preferences-core:1.1.0-beta01")
+
             }
         }
         val androidMain by getting {
